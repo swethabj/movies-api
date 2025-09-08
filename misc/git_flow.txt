@@ -1,0 +1,15 @@
+# Make a project folder
+mkdir movies-api && cd movies-api
+
+# Initialize git
+git init
+
+# Create go module (use repo path)
+go mod init github.com/swethabj/movies-api
+
+# Create files / folders -- project structure 
+
+
+# First Commit & Push
+git add .
+git commit -m "Initial commit: Movies API project setup"

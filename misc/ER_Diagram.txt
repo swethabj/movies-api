@@ -1,0 +1,16 @@
+One-to-Many:
+
+    genres (1) → (many) movies
+
+Many-to-Many:
+
+    movies ↔ actors (through movie_actors)
+
+
+Cascade Rules:
+
+Deleting a movie → its entries in movie_actors are deleted
+
+Deleting an actor → its entries in movie_actors are deleted
+
+Deleting a genre → genre_id in movies becomes NULL

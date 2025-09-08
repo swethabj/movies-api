@@ -1,0 +1,42 @@
+1.When is go.mod created?
+-- It’s created when you initialize a new Go module with:
+-- go mod init github.com/yourusername/movies-api
+
+2.How do dependencies get added?
+-- Dependencies are added automatically when you use go get or import a package in your code.
+-- go get github.com/gofiber/fiber/v2
+-- This updates go.mod with the dependency and version.
+-- It also creates a go.sum file (checksums for dependency integrity).
+
+3.How Go Uses go.mod?
+-- When you run: " go run main.go "
+-- Go checks go.mod, fetches dependencies, caches them, and builds.
+-- If you edit imports manually (e.g., remove logrus from code), you can clean up with:" go mod tidy "  ( Removes unused deps and adds missing ones.)
+
+## Notes ##
+Always commit go.mod and go.sum to Git.
+
+Don’t manually edit go.sum.
+
+Use go mod tidy before pushing to keep files clean.
+
+-- Pin versions (v1.5.0) for reproducibility.
+
+-- For teams → consider using a dependency proxy (like Go proxy or Artifactory).
+
+
+
+## Notes 2  - on go mod init with git path ##
+Personal projects / local only → " go mod init movies-api " is enough.
+-- Not mandatory to write github.com/yourusername/...
+
+Open-source / team project on GitHub → use github.com/<username>/<repo>.
+-- If you want others (or CI/CD) to import your module easily → use repo URL.
+
+Enterprise project → match your company’s VCS (e.g., gitlab.company.com/team/project).
+-- For local/dev-only projects, a simple name works fine.
+
+
+
+
+
