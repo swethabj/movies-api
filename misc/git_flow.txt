@@ -13,3 +13,12 @@ go mod init github.com/swethabj/movies-api
 # First Commit & Push
 git add .
 git commit -m "Initial commit: Movies API project setup"
+
+#create branch
+git branch -M main_branch_1
+
+# Link to remote repo
+git remote add origin https://github.com/swethabj/movies-api.git
+
+# Push to GitHub
+git push -u origin main_branch_1
