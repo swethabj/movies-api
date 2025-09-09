@@ -22,7 +22,7 @@ func ConnectDB() {
 
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true&loc=Local", user, pass, host, port, name)
 	//user:password@tcp(host:port)/dbname?parseTime=true&loc=Local
-	//fmt.Println("DSN", dsn)
+	fmt.Println("DSN", dsn)
 
 	// use GORM's logger with minimal output in production (info in dev)
 	gormLogger := logger.Default.LogMode(logger.Silent)

@@ -3,6 +3,7 @@ package server
 import (
 	"github.com/gofiber/fiber/v2"
 	v2logger "github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/gofiber/swagger"
 	"github.com/swethabj/movies-api/internal/handlers"
 )
 
@@ -10,6 +11,9 @@ func NewRouter() *fiber.App {
 	app := fiber.New(fiber.Config{
 		AppName: "movies-api",
 	})
+
+	// Swagger route
+	app.Get("/swagger/*", swagger.HandlerDefault)
 
 	// Fiber logger middleware writes to stdout (in production pipe to file or aggregator)
 	app.Use(v2logger.New())
