@@ -40,6 +40,15 @@ func CreateMovie(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusCreated).JSON(movie)
 }
 
+// GetMovies godoc
+// @Summary Get all movies
+// @Description Get details of all movies
+// @Tags movies
+// @Accept  json
+// @Produce  json
+// @Success 200 {array}  models.Movie
+// @Failure 400 {object} map[string]string
+// @Router /movies [get]
 func GetMovies(c *fiber.Ctx) error {
 	movies, err := repository.GetAllMovies()
 	if err != nil {
